@@ -1,4 +1,4 @@
-package com.sparta.sortingAlgorithm;
+package com.sparta;
 
 import com.sparta.designPattern.Controller;
 
