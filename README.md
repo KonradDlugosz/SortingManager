@@ -4,7 +4,7 @@
 
 ### Index: 
 
-1. [**Description **](#Description )
+1. [**Description**](#Description )
 2. [**User interface**](#User-interface)
 
 
