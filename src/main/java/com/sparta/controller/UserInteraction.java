@@ -12,7 +12,6 @@ public class UserInteraction {
 
     public static void runUserInterface() {
 
-
         Scanner scan = new Scanner(System.in);
         int selectedMenu = 1;
 
