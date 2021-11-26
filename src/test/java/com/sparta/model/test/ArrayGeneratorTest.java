@@ -1,6 +1,6 @@
-package com.sparta.sortingAlgorithm.test;
+package com.sparta.model.test;
 
-import com.sparta.sortingAlgorithm.ArrayGenerator;
+import com.sparta.model.ArrayGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

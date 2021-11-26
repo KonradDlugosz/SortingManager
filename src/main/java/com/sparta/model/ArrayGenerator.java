@@ -1,4 +1,4 @@
-package com.sparta.sortingAlgorithm;
+package com.sparta.model;
 
 import java.util.Random;
 

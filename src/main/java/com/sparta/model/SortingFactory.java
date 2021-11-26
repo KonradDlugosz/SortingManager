@@ -1,11 +1,10 @@
-package com.sparta.designPattern;
+package com.sparta.model;
 
-import com.sparta.sortingAlgorithm.*;
+import com.sparta.model.*;
 
-public class Model {
+public class SortingFactory {
 
     private static Sorter sorter;
-    public static ArrayGenerator arrayGenerator;
 
     public static Sorter sortingFactory(int selected) {
 
@@ -18,11 +17,6 @@ public class Model {
         }
 
         return sorter;
-
-    }
-
-    public static void createDefaultRandomArray(){
-        arrayGenerator = new ArrayGenerator(1000, 1,100, 50);
 
     }
 

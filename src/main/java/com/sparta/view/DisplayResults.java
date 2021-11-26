@@ -1,17 +1,18 @@
-package com.sparta.designPattern;
+package com.sparta.view;
 
-import com.sparta.sortingAlgorithm.Sorter;
+import com.sparta.model.Sorter;
 
 import java.util.Arrays;
 
-import static com.sparta.designPattern.Model.arrayGenerator;
+import static com.sparta.SortingDriver.arrayGenerator;
 
-public class View {
+public class DisplayResults {
 
     private static long startTime;
     private static long endTime;
     private static long timeTaken;
 
+    private static int [] arr;
 
 
     public static void displaySortingResult(Sorter sorter, String method){
@@ -23,7 +24,7 @@ public class View {
             System.out.println("Quick Sort: ");
         }
 
-        int [] arr = arrayGenerator.generateArray();
+        arr = arrayGenerator.generateArray();
         startTime = System.currentTimeMillis();
         sorter.sortingAlgorithm(arr);
         System.out.println(Arrays.toString(arr));

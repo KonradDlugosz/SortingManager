@@ -1,8 +1,8 @@
-package com.sparta.sortingAlgorithm.test;
+package com.sparta.model.test;
 
-import com.sparta.sortingAlgorithm.ArrayGenerator;
-import com.sparta.sortingAlgorithm.BubbleSortImpl;
-import com.sparta.sortingAlgorithm.Sorter;
+import com.sparta.model.ArrayGenerator;
+import com.sparta.model.BubbleSortImpl;
+import com.sparta.model.Sorter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
