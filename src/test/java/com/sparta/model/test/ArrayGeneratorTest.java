@@ -36,4 +36,34 @@ public class ArrayGeneratorTest {
         assertEquals(Arrays.toString(expected),Arrays.toString(arrayGenerator.generateArray()));
     }
 
+    @Test
+    @DisplayName("4. Given negative length, return length of zero")
+    public void givenLengthNegativeReturnLengthZero() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(1000, 1,100, 50);
+        arrayGenerator.setLength(-40);
+        assertEquals(0, arrayGenerator.getLength());
+    }
+
+    @Test
+    @DisplayName("5. Given negative start, return start of zero")
+    public void givenNegativeStartReturnStartZero() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(1000, 1,100, 50);
+        arrayGenerator.setStart(-15);
+        assertEquals(0, arrayGenerator.getStart());
+    }
+    @Test
+    @DisplayName("6. Given negative end, return end of zero")
+    public void givenNegativeEndReturnEndZero() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(1000, 1,100, 50);
+        arrayGenerator.setEnd(-20);
+        assertEquals(0, arrayGenerator.getEnd());
+    }
+    @Test
+    @DisplayName("7. Given negative seed, return seed of zero")
+    public void givenNegativeSeedReturnSeedZero() {
+        ArrayGenerator arrayGenerator = new ArrayGenerator(1000, 1,100, 50);
+        arrayGenerator.setSeed(-30);
+        assertEquals(0, arrayGenerator.getSeed());
+    }
+
 }

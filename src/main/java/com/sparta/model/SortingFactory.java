@@ -1,7 +1,5 @@
 package com.sparta.model;
 
-import com.sparta.model.*;
-
 public class SortingFactory {
 
     private static Sorter sorter;

@@ -14,7 +14,11 @@ public class ArrayGenerator {
     }
 
     public void setLength(int length) {
-        this.length = length;
+        if(length < 0){
+            this.length = 0;
+        }else {
+            this.length = length;
+        }
     }
 
     public int getStart() {
@@ -22,7 +26,11 @@ public class ArrayGenerator {
     }
 
     public void setStart(int start) {
-        this.start = start;
+        if(start < 0){
+            this.start = 0;
+        }else {
+            this.start = start;
+        }
     }
 
     public int getEnd() {
@@ -30,7 +38,11 @@ public class ArrayGenerator {
     }
 
     public void setEnd(int end) {
-        this.end = end;
+        if(end < 0){
+            this.end = 0;
+        }else {
+            this.end = end;
+        }
     }
 
     public long getSeed() {
@@ -38,11 +50,11 @@ public class ArrayGenerator {
     }
 
     public void setSeed(long seed) {
-        this.seed = seed;
-    }
-
-    public ArrayGenerator(int length, int start, int end) {
-        this(length,start,end, 0);
+        if(seed < 0){
+            this.seed = 0;
+        }else {
+            this.seed = seed;
+        }
     }
 
     public ArrayGenerator(int length, int start, int end, long seed) {
