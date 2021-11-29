@@ -1,6 +1,6 @@
-package com.sparta.model;
+package com.sparta.model.array;
 
-public class QuickSortImpl implements Sorter  {
+public class QuickSortImpl implements SorterArray {
 
     @Override
     public void sortingAlgorithm(int[] arr) {

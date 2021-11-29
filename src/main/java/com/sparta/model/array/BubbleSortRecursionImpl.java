@@ -1,6 +1,6 @@
-package com.sparta.model;
+package com.sparta.model.array;
 
-public class BubbleSortRecursionImpl implements Sorter{
+public class BubbleSortRecursionImpl implements SorterArray {
 
     @Override
     public void sortingAlgorithm(int[] arr) {

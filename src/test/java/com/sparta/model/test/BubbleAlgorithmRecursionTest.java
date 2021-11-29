@@ -1,8 +1,8 @@
 package com.sparta.model.test;
 
 import com.sparta.model.ArrayGenerator;
-import com.sparta.model.BubbleSortRecursionImpl;
-import com.sparta.model.Sorter;
+import com.sparta.model.array.BubbleSortRecursionImpl;
+import com.sparta.model.array.SorterArray;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,11 +13,11 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class BubbleAlgorithmRecursionTest {
 
-    private static Sorter sorter;
+    private static SorterArray sorterArray;
 
     @BeforeAll
     public static void setUpAll(){
-        sorter = new BubbleSortRecursionImpl();
+        sorterArray = new BubbleSortRecursionImpl();
     }
 
     @Test
@@ -25,7 +25,7 @@ public class BubbleAlgorithmRecursionTest {
     public void givenRandomArrayReturnSortedArrayMethod2() {
         ArrayGenerator arrayGenerator = new ArrayGenerator(100, 1,1000, 50);
         int [] actual = arrayGenerator.generateArray();
-        sorter.sortingAlgorithm(actual);
+        sorterArray.sortingAlgorithm(actual);
         int [] expected = {9, 13, 54, 55, 56, 61, 66, 72, 89, 93, 101, 102, 104, 120, 126, 137, 140, 145, 146,
                 150, 165, 186, 186, 198, 203, 204, 204, 229, 255, 261, 271, 272, 292, 295, 297, 306, 308, 314,
                 342, 370, 372, 378, 379, 384, 400, 408, 408, 434, 437, 450, 453, 464, 476, 490, 510, 521, 540,
@@ -40,7 +40,7 @@ public class BubbleAlgorithmRecursionTest {
     public void givenEmptyArrayReturnEmptyArrayMethod2(){
         ArrayGenerator arrayGenerator = new ArrayGenerator(0, 1,1000, 50);
         int [] actual = arrayGenerator.generateArray();
-        sorter.sortingAlgorithm(actual);
+        sorterArray.sortingAlgorithm(actual);
         int [] expected = {};
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 
@@ -51,7 +51,7 @@ public class BubbleAlgorithmRecursionTest {
     public void givenNegativeLengthArrayReturnEmptyArrayMethod2(){
         ArrayGenerator arrayGenerator = new ArrayGenerator(-10, 1,1000, 50);
         int [] actual = arrayGenerator.generateArray();
-        sorter.sortingAlgorithm(actual);
+        sorterArray.sortingAlgorithm(actual);
         int [] expected = {};
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 
