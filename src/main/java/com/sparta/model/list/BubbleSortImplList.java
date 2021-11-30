@@ -2,10 +2,11 @@ package com.sparta.model.list;
 
 import java.util.List;
 
-public class BubbleSortImplList implements SorterList {
+public class BubbleSortImplList<T extends Comparable<? super T>> implements SorterList<T> {
 
-    public void sortingAlgorithm(List<Integer> list) {
-        Integer temp;
+    @Override
+    public void sortingAlgorithm(List<T> list) {
+        T temp;
         boolean sorted = false;
 
         while (!sorted) {

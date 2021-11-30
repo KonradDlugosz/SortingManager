@@ -1,19 +1,16 @@
 package com.sparta.controller;
 
 import com.sparta.model.array.SortingFactory;
-import com.sparta.model.list.SorterList;
 import com.sparta.model.list.SortingFactoryList;
 import com.sparta.view.DisplayFunctions;
 import com.sparta.view.DisplayResults;
 
-import java.util.Arrays;
 import java.util.Scanner;
 
-import static com.sparta.SortingDriver.arrayGenerator;
 
 public class UserInterface {
 
-    public static void runUserInterface() {
+    public static void runUserInterface()  {
 
         Scanner scan = new Scanner(System.in);
 
@@ -23,7 +20,8 @@ public class UserInterface {
         // Main Menu
         while (selectedMenu != 0){
             DisplayFunctions.displayMainMenu();
-            selectedMenu = scan.nextInt();
+            selectedMenu = CheckInput.checkInputMenuForException(4);
+
 
             //Show data structure menu:
             if(selectedMenu == 1){
@@ -31,14 +29,15 @@ public class UserInterface {
 
                 while(dataMenu != 0){
                     DisplayFunctions.displayDataMenu();
-                    dataMenu = scan.nextInt();
+                    dataMenu = CheckInput.checkInputMenuForException(3);
 
                     if(dataMenu == 1){
                         // ArrayList
                         int sortMenu = 1;
                         while (sortMenu != 0){
+
                             DisplayFunctions.displaySortingFunctions();
-                            sortMenu = scan.nextInt();
+                            sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
                                 //Bubble sort -> ArrayList
                                 DisplayFunctions.displaySortType("BubbleSort");
@@ -62,14 +61,12 @@ public class UserInterface {
                         }
 
 
-
                     } else if(dataMenu == 2){
                         // LinkedList
-
                         int sortMenu = 1;
                         while (sortMenu != 0){
                             DisplayFunctions.displaySortingFunctions();
-                            sortMenu = scan.nextInt();
+                            sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
                                 //Bubble sort -> LinkedList
                                 DisplayFunctions.displaySortType("BubbleSort");
@@ -99,7 +96,7 @@ public class UserInterface {
                         int sortMenu = 1;
                         while (sortMenu != 0){
                             DisplayFunctions.displaySortingFunctions();
-                            sortMenu = scan.nextInt();
+                            sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
                                 //Bubble sort -> Array
                                 DisplayFunctions.displaySortType("BubbleSort");
@@ -123,8 +120,6 @@ public class UserInterface {
                         }
                     } else if(dataMenu == 0){
                         dataMenu = 0;
-                    } else {
-                        System.out.println("Ops! Wrong input!!!");
                     }
                 }
 
@@ -143,8 +138,6 @@ public class UserInterface {
                         updateMenu = 0;
                     } else if(isCorrect.equals("no")){
                         updateMenu = 1;
-                    }else {
-                        System.out.println("Wrong option!");
                     }
                 }
             }
@@ -159,8 +152,6 @@ public class UserInterface {
             else if(selectedMenu == 0){
                 System.out.println("Bye!");
                 System.exit(0);
-            } else {
-                System.out.println("Ops. Wrong input !!!");
             }
         }
     }
