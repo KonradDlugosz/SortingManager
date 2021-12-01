@@ -1,11 +1,13 @@
 package com.sparta.controller;
 
-import com.sparta.model.array.SortingFactory;
-import com.sparta.model.list.SortingFactoryList;
+import com.sparta.model.sorting.SortingFactory;
 import com.sparta.view.DisplayFunctions;
 import com.sparta.view.DisplayResults;
 
 import java.util.Scanner;
+
+import static com.sparta.SortingDriver.arrayIntegerGenerator;
+import static com.sparta.SortingDriver.logger;
 
 
 public class UserInterface {
@@ -22,100 +24,107 @@ public class UserInterface {
             DisplayFunctions.displayMainMenu();
             selectedMenu = CheckInput.checkInputMenuForException(4);
 
-
             //Show data structure menu:
             if(selectedMenu == 1){
+                logger.info("User selected: Sorting menu");
                 int dataMenu = 1;
 
                 while(dataMenu != 0){
                     DisplayFunctions.displayDataMenu();
                     dataMenu = CheckInput.checkInputMenuForException(3);
-
                     if(dataMenu == 1){
+                        logger.info("Data structure choice: ArrayList");
                         // ArrayList
                         int sortMenu = 1;
                         while (sortMenu != 0){
-
                             DisplayFunctions.displaySortingFunctions();
                             sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
+                                logger.info("Running bubble sort...");
                                 //Bubble sort -> ArrayList
                                 DisplayFunctions.displaySortType("BubbleSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"BubbleSort", 1);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"BubbleSort", 1);
                             } else if(sortMenu == 2){
+                                logger.info("Running bubble sort recursive...");
                                 //Bubble sort Recursive -> ArrayList
                                 DisplayFunctions.displaySortType("BubbleSortRecursive");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu), "BubbleSortRecursive",1);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu), "BubbleSortRecursive",1);
                             } else if(sortMenu == 3){
+                                logger.info("Running quick sort...");
                                 //Quick sort -> ArrayList
                                 DisplayFunctions.displaySortType("QuickSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"QuickSort", 1);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"QuickSort", 1);
                             } else if(sortMenu == 4){
+                                logger.info("Running tim sort...");
                                 DisplayFunctions.displaySortType("TimSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"TimSort", 1);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"TimSort", 1);
                             }  else if(sortMenu == 0){
                                 sortMenu = 0;
-                            } else {
-                                System.out.println("Ops! Wrong input!!!");
                             }
                         }
 
 
                     } else if(dataMenu == 2){
+                        logger.info("Data structure choice: LinkedList");
                         // LinkedList
                         int sortMenu = 1;
                         while (sortMenu != 0){
                             DisplayFunctions.displaySortingFunctions();
                             sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
+                                logger.info("Running bubble sort...");
                                 //Bubble sort -> LinkedList
                                 DisplayFunctions.displaySortType("BubbleSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"BubbleSort", 2);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"BubbleSort", 2);
                             } else if(sortMenu == 2){
+                                logger.info("Running bubble sort recursive...");
                                 //Bubble sort Recursive -> LinkedList
                                 DisplayFunctions.displaySortType("BubbleSortRecursive");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"BubbleSortRecursive", 2);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"BubbleSortRecursive", 2);
                             } else if(sortMenu == 3){
+                                logger.info("Running quick sort...");
                                 //Quick sort -> LinkedList
                                 DisplayFunctions.displaySortType("QuickSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"QuickSort", 2);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"QuickSort", 2);
                             } else if(sortMenu == 4){
+                                logger.info("Running tim sort...");
                                 DisplayFunctions.displaySortType("TimSort");
-                                DisplayResults.displaySortingListResult(SortingFactoryList.sortingFactory(sortMenu),"TimSort", 2);
+                                DisplayResults.displaySortingListResult(SortingFactory.sortingFactory(sortMenu),"TimSort", 2);
                             } else if(sortMenu == 0){
                                 sortMenu = 0;
-                            } else {
-                                System.out.println("Ops! Wrong input!!!");
                             }
                         }
 
 
 
                     } else if(dataMenu == 3){
+                        logger.info("Data structure choice: Array");
                         // Array
                         int sortMenu = 1;
                         while (sortMenu != 0){
                             DisplayFunctions.displaySortingFunctions();
                             sortMenu = CheckInput.checkInputMenuForException(4);
                             if(sortMenu == 1){
+                                logger.info("Running bubble sort...");
                                 //Bubble sort -> Array
                                 DisplayFunctions.displaySortType("BubbleSort");
                                 DisplayResults.displaySortingArrayResult(SortingFactory.sortingFactory(sortMenu), "BubbleSort");
                             } else if(sortMenu == 2){
+                                logger.info("Running bubble sort recursive...");
                                 //Bubble sort Recursive -> Array
                                 DisplayFunctions.displaySortType("BubbleSortRecursive");
                                 DisplayResults.displaySortingArrayResult(SortingFactory.sortingFactory(sortMenu), "BubbleSortRecursive");
                             } else if(sortMenu == 3){
+                                logger.info("Running quick sort...");
                                 //Quick sort -> Array
                                 DisplayFunctions.displaySortType("QuickSort");
                                 DisplayResults.displaySortingArrayResult(SortingFactory.sortingFactory(sortMenu), "QuickSort");
                             } else if(sortMenu == 4){
+                                logger.info("Running tim sort...");
                                 DisplayFunctions.displaySortType("TimSort");
                                 DisplayResults.displaySortingArrayResult(SortingFactory.sortingFactory(sortMenu), "TimSort");
                             }  else if(sortMenu == 0){
                                 sortMenu = 0;
-                            } else {
-                                System.out.println("Ops! Wrong input!!!");
                             }
                         }
                     } else if(dataMenu == 0){
@@ -126,6 +135,7 @@ public class UserInterface {
                 // show current array
             } else if(selectedMenu == 2){
                 DisplayFunctions.displayCurrentRandomArray();
+                logger.info("User selected: View current array");
             }
 
             // Update random array param
@@ -139,17 +149,21 @@ public class UserInterface {
                     } else if(isCorrect.equals("no")){
                         updateMenu = 1;
                     }
+                    logger.info("User updated random array params: " + "Length: " + arrayIntegerGenerator.getLength() +
+                            " Start: " + arrayIntegerGenerator.getStart() + " End: " + arrayIntegerGenerator.getEnd() + " Seed: " + arrayIntegerGenerator.getSeed());
                 }
             }
 
             // Get performance report
             else if (selectedMenu == 4){
                 System.out.println("Generating report...");
+                logger.info("User selected: Generate report");
                 // TODO Time performance
             }
 
             // Exit
             else if(selectedMenu == 0){
+                logger.info("Exit application");
                 System.out.println("Bye!");
                 System.exit(0);
             }

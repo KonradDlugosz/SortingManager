@@ -3,7 +3,7 @@ package com.sparta.view;
 import java.util.Arrays;
 import java.util.Scanner;
 
-import static com.sparta.SortingDriver.arrayGenerator;
+import static com.sparta.SortingDriver.arrayIntegerGenerator;
 
 public class DisplayFunctions {
 
@@ -45,18 +45,18 @@ public class DisplayFunctions {
         Scanner scan = new Scanner(System.in);
         System.out.println("Update array parameters: ");
         System.out.println("Length: ");
-        arrayGenerator.setLength(scan.nextInt());
+        arrayIntegerGenerator.setLength(scan.nextInt());
         System.out.println("Start: ");
-        arrayGenerator.setStart(scan.nextInt());
+        arrayIntegerGenerator.setStart(scan.nextInt());
         System.out.println("End: ");
-        arrayGenerator.setEnd(scan.nextInt());
+        arrayIntegerGenerator.setEnd(scan.nextInt());
         System.out.println("Seed: ");
-        arrayGenerator.setSeed(scan.nextInt());
+        arrayIntegerGenerator.setSeed(scan.nextInt());
         System.out.println("New parameters: ");
-        System.out.println("Length: " + arrayGenerator.getLength() );
-        System.out.println("Start: " + arrayGenerator.getStart() );
-        System.out.println("End: " + arrayGenerator.getEnd() );
-        System.out.println("Seed: " + arrayGenerator.getSeed() );
+        System.out.println("Length: " + arrayIntegerGenerator.getLength() );
+        System.out.println("Start: " + arrayIntegerGenerator.getStart() );
+        System.out.println("End: " + arrayIntegerGenerator.getEnd() );
+        System.out.println("Seed: " + arrayIntegerGenerator.getSeed() );
         System.out.println("Is this correct? (yes/no)");
     }
 
@@ -71,13 +71,13 @@ public class DisplayFunctions {
 
     public static void displayCurrentRandomArray(){
         System.out.print("Random array: ");
-        System.out.println(Arrays.toString(arrayGenerator.generateArray()));
+        System.out.println(Arrays.toString(arrayIntegerGenerator.generateArray()));
         System.out.println();
         System.out.println("Parameters: ");
-        System.out.println("Length: " + arrayGenerator.getLength());
-        System.out.println("Start: " + arrayGenerator.getStart());
-        System.out.println("End: " + arrayGenerator.getEnd());
-        System.out.println("Seed: " + arrayGenerator.getSeed());
+        System.out.println("Length: " + arrayIntegerGenerator.getLength());
+        System.out.println("Start: " + arrayIntegerGenerator.getStart());
+        System.out.println("End: " + arrayIntegerGenerator.getEnd());
+        System.out.println("Seed: " + arrayIntegerGenerator.getSeed());
         System.out.println();
     }
 

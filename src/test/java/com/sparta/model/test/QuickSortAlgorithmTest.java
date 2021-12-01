@@ -1,8 +1,8 @@
 package com.sparta.model.test;
 
-import com.sparta.model.ArrayGenerator;
-import com.sparta.model.array.QuickSortImpl;
-import com.sparta.model.array.SorterArray;
+import com.sparta.model.ArrayIntegerGenerator;
+import com.sparta.model.sorting.QuickSortImpl;
+import com.sparta.model.sorting.Sorter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -13,19 +13,19 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class QuickSortAlgorithmTest {
 
-    private static SorterArray sorterArray;
+    private static Sorter sorter;
 
     @BeforeAll
     public static void setUpAll(){
-        sorterArray = new QuickSortImpl();
+        sorter = new QuickSortImpl();
     }
 
     @Test
     @DisplayName("1. Given random array, Return sorted array")
     public void givenRandomArrayReturnSortedArray() {
-        ArrayGenerator arrayGenerator = new ArrayGenerator(150, 1,1000, 40);
-        int [] actual = arrayGenerator.generateArray();
-        sorterArray.sortingAlgorithm(actual);
+        ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(150, 1,1000, 40);
+        Integer [] actual = arrayIntegerGenerator.generateArray();
+        sorter.sortingAlgorithm(actual);
         int [] expected = {5, 5, 6, 6, 14, 15, 15, 16, 33, 37, 43, 51, 57, 58, 58, 59, 72, 74, 79, 94, 99, 101,
                 108, 109, 117, 120, 128, 130, 133, 142, 149, 153, 159, 172, 173, 176, 197, 201, 214, 219, 222,
                 224, 235, 239, 250, 254, 258, 261, 261, 302, 326, 359, 376, 380, 388, 392, 397, 398, 415, 415,
@@ -42,9 +42,9 @@ public class QuickSortAlgorithmTest {
     @Test
     @DisplayName("2. Given empty array, Return empty array")
     public void givenEmptyArrayReturnEmptyArray(){
-        ArrayGenerator arrayGenerator = new ArrayGenerator(0, 1,1000, 50);
-        int [] actual = arrayGenerator.generateArray();
-        sorterArray.sortingAlgorithm(actual);
+        ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(0, 1,1000, 50);
+        Integer [] actual = arrayIntegerGenerator.generateArray();
+        sorter.sortingAlgorithm(actual);
         int [] expected = {};
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 
@@ -53,9 +53,9 @@ public class QuickSortAlgorithmTest {
     @Test
     @DisplayName("3. Given negative length array, Return empty array")
     public void givenNegativeLengthArrayReturnEmptyArray(){
-        ArrayGenerator arrayGenerator = new ArrayGenerator(-10, 1,1000, 50);
-        int [] actual = arrayGenerator.generateArray();
-        sorterArray.sortingAlgorithm(actual);
+        ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(-10, 1,1000, 50);
+        Integer [] actual = arrayIntegerGenerator.generateArray();
+        sorter.sortingAlgorithm(actual);
         int [] expected = {};
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 

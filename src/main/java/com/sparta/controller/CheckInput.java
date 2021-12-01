@@ -3,6 +3,8 @@ package com.sparta.controller;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
+import static com.sparta.SortingDriver.logger;
+
 public class CheckInput {
 
     public static int checkInputMenuForException(int numberOfOptions){
@@ -15,6 +17,7 @@ public class CheckInput {
             try{
                 n = scan.nextInt();
                 if(n > numberOfOptions) {
+                    logger.error("Wrong input for the menu!" + " | Entered: " + n);
                     throw new IndexOutOfBoundsException();
                 }
                 correct = true;

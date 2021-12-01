@@ -2,7 +2,7 @@ package com.sparta.model;
 
 import java.util.Random;
 
-public class ArrayGenerator {
+public class ArrayIntegerGenerator {
     private int length;
     private int start;
     private int end;
@@ -57,7 +57,7 @@ public class ArrayGenerator {
         }
     }
 
-    public ArrayGenerator(int length, int start, int end, long seed) {
+    public ArrayIntegerGenerator(int length, int start, int end, long seed) {
         if(length < 0){
             this.length = 0;
         }
@@ -69,9 +69,9 @@ public class ArrayGenerator {
         this.seed = seed;
     }
 
-    public int[] generateArray() {
+    public Integer[] generateArray() {
         Random random = new Random();
-        int[] arr = new int[length];
+        Integer[] arr = new Integer[length];
 
         if(seed > 0)
             random.setSeed(seed);
