@@ -7,5 +7,4 @@ public interface Sorter<T> {
     void sortingAlgorithm(T[] arr);
     void sortingAlgorithm(List<T> arr);
 
-
 }

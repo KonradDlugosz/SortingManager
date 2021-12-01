@@ -1,6 +1,6 @@
 package com.sparta.model.test;
 
-import com.sparta.model.sorting.SortingFactory;
+import com.sparta.model.factory.SortingFactory;
 import com.sparta.model.sorting.BubbleSortImpl;
 import com.sparta.model.sorting.BubbleSortRecursionImpl;
 import com.sparta.model.sorting.QuickSortImpl;

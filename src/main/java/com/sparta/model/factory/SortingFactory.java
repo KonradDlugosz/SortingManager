@@ -1,4 +1,6 @@
-package com.sparta.model.sorting;
+package com.sparta.model.factory;
+
+import com.sparta.model.sorting.*;
 
 public class SortingFactory {
 
@@ -12,6 +14,8 @@ public class SortingFactory {
             sorter = new BubbleSortRecursionImpl();
         } else if (selected == 3){
             sorter = new QuickSortImpl();
+        } else if (selected == 4){
+            sorter = new TimSortImpl();
         }
 
         return sorter;

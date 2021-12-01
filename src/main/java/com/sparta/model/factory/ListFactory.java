@@ -1,14 +1,14 @@
-package com.sparta.model.sorting;
+package com.sparta.model.factory;
 
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 
-public class ListFactory {
+public class ListFactory<T extends Comparable<? super T>> {
 
-    public static List <Integer> list;
-    public static List listFactory(Integer [] arr, int selected) {
+    public  List <T> list;
+    public List listFactory(T [] arr, int selected) {
 
         if(selected == 1){
             list = new ArrayList<>(List.of(arr));
