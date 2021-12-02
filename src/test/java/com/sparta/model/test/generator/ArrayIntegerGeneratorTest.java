@@ -1,4 +1,4 @@
-package com.sparta.model.test;
+package com.sparta.model.test.generator;
 
 import com.sparta.model.generator.ArrayIntegerGenerator;
 import org.junit.jupiter.api.DisplayName;

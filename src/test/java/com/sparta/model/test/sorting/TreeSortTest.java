@@ -1,8 +1,9 @@
-package com.sparta.model.test;
+package com.sparta.model.test.sorting;
 
 import com.sparta.model.generator.ArrayIntegerGenerator;
 import com.sparta.model.sorting.QuickSortImpl;
 import com.sparta.model.sorting.Sorter;
+import com.sparta.model.sorting.TreeSortImpl;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -11,13 +12,13 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class QuickSortAlgorithmTest {
+public class TreeSortTest {
 
     private static Sorter sorter;
 
     @BeforeAll
     public static void setUpAll(){
-        sorter = new QuickSortImpl();
+        sorter = new TreeSortImpl();
     }
 
     @Test

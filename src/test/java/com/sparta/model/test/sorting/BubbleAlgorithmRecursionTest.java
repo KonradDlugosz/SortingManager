@@ -1,7 +1,7 @@
-package com.sparta.model.test;
+package com.sparta.model.test.sorting;
 
 import com.sparta.model.generator.ArrayIntegerGenerator;
-import com.sparta.model.sorting.BubbleSortImpl;
+import com.sparta.model.sorting.BubbleSortRecursionImpl;
 import com.sparta.model.sorting.Sorter;
 import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.DisplayName;
@@ -11,18 +11,18 @@ import java.util.Arrays;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class BubbleAlgorithmTest {
+public class BubbleAlgorithmRecursionTest {
 
-    private static Sorter sorter = new BubbleSortImpl();
+    private static Sorter sorter;
 
     @BeforeAll
     public static void setUpAll(){
-        sorter = new BubbleSortImpl();
+        sorter = new BubbleSortRecursionImpl();
     }
 
     @Test
-    @DisplayName("1. Given random array, Return sorted array")
-    public void givenRandomArrayReturnSortedArray() {
+    @DisplayName("1 Given random array, Return sorted array")
+    public void givenRandomArrayReturnSortedArrayMethod2() {
         ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(100, 1,1000, 50);
         Integer [] actual = arrayIntegerGenerator.generateArray();
         sorter.sortingAlgorithm(actual);
@@ -33,12 +33,11 @@ public class BubbleAlgorithmTest {
                 740, 748, 759, 791, 800, 810, 811, 813, 827, 830, 844, 860, 871, 892, 923, 930, 940, 956, 958,
                 963, 964, 969, 973, 979};
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
-
     }
 
     @Test
     @DisplayName("2. Given empty array, Return empty array")
-    public void givenEmptyArrayReturnEmptyArray(){
+    public void givenEmptyArrayReturnEmptyArrayMethod2(){
         ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(0, 1,1000, 50);
         Integer [] actual = arrayIntegerGenerator.generateArray();
         sorter.sortingAlgorithm(actual);
@@ -49,7 +48,7 @@ public class BubbleAlgorithmTest {
 
     @Test
     @DisplayName("3. Given negative length array, Return empty array")
-    public void givenNegativeLengthArrayReturnEmptyArray(){
+    public void givenNegativeLengthArrayReturnEmptyArrayMethod2(){
         ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(-10, 1,1000, 50);
         Integer [] actual = arrayIntegerGenerator.generateArray();
         sorter.sortingAlgorithm(actual);
@@ -57,5 +56,4 @@ public class BubbleAlgorithmTest {
         assertEquals(Arrays.toString(expected), Arrays.toString(actual));
 
     }
-
 }

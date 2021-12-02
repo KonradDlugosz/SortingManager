@@ -14,7 +14,11 @@ public class ArrayStringGenerator {
     }
 
     public void setLength(int length) {
-        this.length = length;
+        if(length < 0){
+            this.length = 0;
+        }else {
+            this.length = length;
+        }
     }
 
     public int getSizePerString() {
@@ -22,7 +26,11 @@ public class ArrayStringGenerator {
     }
 
     public void setSizePerString(int sizePerString) {
-        this.charPerString = sizePerString;
+        if(sizePerString < 0){
+            this.charPerString = 0;
+        }else {
+            this.charPerString = sizePerString;
+        }
     }
 
     public int getSeed() {
@@ -30,11 +38,19 @@ public class ArrayStringGenerator {
     }
 
     public void setSeed(int seed) {
-        this.seed = seed;
+        if(seed < 0){
+            this.seed = 0;
+        }else {
+            this.seed = seed;
+        }
     }
 
     public ArrayStringGenerator(int length, int charPerString, int seed) {
-        this.length = length;
+        if(length < 0){
+            this.length = 0;
+        }else {
+            this.length = length;
+        }
         this.charPerString = charPerString;
         this.seed = seed;
     }
@@ -47,6 +63,11 @@ public class ArrayStringGenerator {
 
         if(seed > 0)
             random.setSeed(seed);
+
+        if(charPerString <= 0){
+            String [] empty = new String[0];
+            return empty;
+        }
 
         for (int i = 0; i < length; i++) {
             temp = "";
