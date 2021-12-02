@@ -13,7 +13,7 @@ public class TreeSortImpl <T extends Comparable <? super T>> implements Sorter<T
 
     // implement tree sort LIST
     public void sortingAlgorithm(List<T> list){
-        TreeSortV2 treeSort = new TreeSortV2();
+        TreeSortImpl treeSort = new TreeSortImpl();
         treeSort.tree(list);
         treeSort.inOrder(treeSort.node, list, 0);
     }

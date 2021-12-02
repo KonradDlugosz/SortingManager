@@ -17,9 +17,9 @@ public class SortingDriver {
         arrayIntegerGenerator = new ArrayIntegerGenerator(1000, 1,10000, 50);
         arrayStringGenerator = new ArrayStringGenerator(100,4,50);
 
-        //UserInterface.runUserInterface();
+        UserInterface.runUserInterface();
 
-        TimeReport.GenerateTimeReport();
+        //TimeReport.GenerateTimeReport();
 
     }
 
