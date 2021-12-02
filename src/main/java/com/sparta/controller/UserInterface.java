@@ -1,9 +1,11 @@
 package com.sparta.controller;
 
 import com.sparta.model.factory.SortingFactory;
+import com.sparta.model.generator.TimeReport;
 import com.sparta.view.DisplayFunctions;
 import com.sparta.view.DisplaySortingResults;
 
+import java.sql.Time;
 import java.util.Scanner;
 
 import static com.sparta.SortingDriver.*;
@@ -103,7 +105,7 @@ public class UserInterface {
                                     } else if(sortMenu == 5){
                                         logger.info("Running tree sort...");
                                         DisplayFunctions.displaySortType("TreeSort");
-                                        DisplaySortingResults.displaySortingResult(SortingFactory.sortingFactory(sortMenu), 1, datatype);
+                                        DisplaySortingResults.displaySortingResult(SortingFactory.sortingFactory(sortMenu), 2, datatype);
                                     }
                                     else if(sortMenu == 0){
                                         sortMenu = 0;
@@ -220,7 +222,7 @@ public class UserInterface {
             else if (selectedMenu == 4){
                 System.out.println("Generating report...");
                 logger.info("User selected: Generate report");
-                // TODO Time performance
+                TimeReport.GenerateTimeReport();
             }
 
             // Exit

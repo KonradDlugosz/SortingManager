@@ -14,13 +14,10 @@ public class SortingDriver {
     public static Logger logger = LogManager.getLogger("Sorting Manager");
 
     public static void main(String[] args) {
-        arrayIntegerGenerator = new ArrayIntegerGenerator(1000, 1,10000, 50);
-        arrayStringGenerator = new ArrayStringGenerator(100,4,50);
+        arrayIntegerGenerator = new ArrayIntegerGenerator(5000, 1,10000, 50);
+        arrayStringGenerator = new ArrayStringGenerator(5000,10,50);
 
         UserInterface.runUserInterface();
-
-        //TimeReport.GenerateTimeReport();
-
     }
 
 }

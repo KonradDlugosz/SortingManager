@@ -31,9 +31,13 @@ public class TimeReport {
 
 
 
-        // Array integers Report
+
         System.out.print("Integer array to sort: ");
         System.out.println(Arrays.toString(arrInteger));
+
+        // Array integers Report
+        System.out.println();
+        System.out.println("Array data structure:");
         for(int i = 0; i < algorithmName.size(); i++){
             long startTime = System.currentTimeMillis();
             Sorter sorter = SortingFactory.sortingFactory(i + 1);
@@ -41,5 +45,47 @@ public class TimeReport {
             System.out.println(algorithmName.get(i));
             DisplayFunctions.displayTimeTaken(startTime);
         }
+
+        // List Integer Report
+        System.out.println();
+        System.out.println("Array list data structure:");
+        for(int i = 0; i < algorithmName.size(); i++){
+            long startTime = System.currentTimeMillis();
+            Sorter sorter = SortingFactory.sortingFactory(i + 1);
+            sorter.sortingAlgorithm(listInteger);
+            System.out.println(algorithmName.get(i));
+            DisplayFunctions.displayTimeTaken(startTime);
+        }
+
+
+        System.out.print("String array to sort: ");
+        System.out.println(Arrays.toString(arrString));
+
+        // Array Strings Report
+        System.out.println();
+        System.out.println("Array data structure:");
+        for(int i = 0; i < algorithmName.size(); i++){
+            long startTime = System.currentTimeMillis();
+            Sorter sorter = SortingFactory.sortingFactory(i + 1);
+            sorter.sortingAlgorithm(arrString);
+            System.out.println(algorithmName.get(i));
+            DisplayFunctions.displayTimeTaken(startTime);
+        }
+
+
+        // List String Report
+        System.out.println();
+        System.out.println("Array list data structure:");
+        for(int i = 0; i < algorithmName.size(); i++){
+            long startTime = System.currentTimeMillis();
+            Sorter sorter = SortingFactory.sortingFactory(i + 1);
+            sorter.sortingAlgorithm(listString);
+            System.out.println(algorithmName.get(i));
+            DisplayFunctions.displayTimeTaken(startTime);
+        }
+
+
+
+
     }
 }
