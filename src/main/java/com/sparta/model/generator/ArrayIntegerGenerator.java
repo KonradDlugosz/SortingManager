@@ -1,6 +1,7 @@
 package com.sparta.model.generator;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class ArrayIntegerGenerator {
     private int length;
@@ -76,9 +77,9 @@ public class ArrayIntegerGenerator {
         if(seed > 0)
             random.setSeed(seed);
 
-        for (int i = 0; i < length; i++) {
-            arr[i] = random.nextInt(start, end);
-        }
+        IntStream.range(0, length)
+                .forEach(i -> arr[i] = random.nextInt(start, end));
+
         return arr;
     }
 

@@ -1,6 +1,7 @@
 package com.sparta.model.generator;
 
 import java.util.Random;
+import java.util.stream.IntStream;
 
 public class ArrayStringGenerator {
     private int length;
@@ -54,6 +55,7 @@ public class ArrayStringGenerator {
             }
             arr[i] = temp;
         }
+
         return arr;
 
     }

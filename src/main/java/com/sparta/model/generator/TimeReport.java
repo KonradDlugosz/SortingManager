@@ -23,8 +23,6 @@ public class TimeReport <T> {
             "Tim Sort",
             "Tree Sort"));
 
-    private static List<Long> timeTaken;
-
     public static void GenerateTimeReport() {
 
         Integer [] arrInteger = arrayIntegerGenerator.generateArray();
