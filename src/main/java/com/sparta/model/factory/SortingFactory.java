@@ -16,6 +16,8 @@ public class SortingFactory {
             sorter = new QuickSortImpl();
         } else if (selected == 4){
             sorter = new TimSortImpl();
+        } else if (selected == 5){
+            sorter = new TreeSortImpl();
         }
 
         return sorter;

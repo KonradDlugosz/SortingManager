@@ -1,6 +1,6 @@
 package com.sparta.model.test;
 
-import com.sparta.model.ArrayIntegerGenerator;
+import com.sparta.model.generator.ArrayIntegerGenerator;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 

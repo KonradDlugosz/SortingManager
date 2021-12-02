@@ -45,6 +45,7 @@ public class DisplayFunctions {
         System.out.println("    2. Bubble Sort Recursive");
         System.out.println("    3. Quick Sort");
         System.out.println("    4. Tim Sort");
+        System.out.println("    5. Tree Sort");
         System.out.println("    0. <<<");
     }
 
@@ -88,10 +89,26 @@ public class DisplayFunctions {
 
     public static void displaySortType(String method){
         switch (method) {
-            case "BubbleSort" -> System.out.println("Bubble Sort (Nested For Loop):");
-            case "BubbleSortRecursive" -> System.out.println("Bubble Sort (Recursive):");
-            case "QuickSort" -> System.out.println("Quick Sort: ");
-            case "TimSort" -> System.out.println("TimSort: ");
+            case "BubbleSort":
+                System.out.println("Algorithm used : Bubble Sort (Nested For Loop)");
+                System.out.print("Sorted array: ");
+                break;
+            case "BubbleSortRecursive":
+                System.out.println("Algorithm used : Bubble Sort (Recursive)");
+                System.out.print("Sorted array: ");
+                break;
+            case "QuickSort":
+                System.out.println("Algorithm used : Quick Sort");
+                System.out.print("Sorted array: ");
+                break;
+            case "TimSort":
+                System.out.println("Algorithm used : TimSort");
+                System.out.print("Sorted array: ");
+                break;
+            case "TreeSort":
+                System.out.println("Algorithm used : TreeSort");
+                System.out.print("Sorted array: ");
+                break;
         }
     }
 

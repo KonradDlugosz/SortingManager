@@ -2,40 +2,19 @@ package com.sparta.model.sorting;
 
 import java.util.List;
 
-public class TreeSortImpl <T extends Comparable <? super T>> implements Sorter<T> {
+public class TreeSortV2 <T extends Comparable <? super T>> {
 
-    // Implements tree sort ARRAY
-    public void sortingAlgorithm(T [] arr){
-        TreeSortImpl treeSort = new TreeSortImpl();
-        treeSort.tree(arr);
-        treeSort.inOrder(treeSort.node, arr, 0);
-    }
-
-    // implement tree sort LIST
-    public void sortingAlgorithm(List<T> list){
+    public void sortingAlgorithm(List <T> list){
         TreeSortV2 treeSort = new TreeSortV2();
         treeSort.tree(list);
         treeSort.inOrder(treeSort.node, list, 0);
     }
 
-    //Nested Class
-    private class Node{
-        public T value;
-        public Node left;
-        public Node right;
-
-        public Node(T value) {
-            this.value = value;
-            left = right = null;
-        }
-    }
-
     public Node node;
 
-    public TreeSortImpl() {
+    public TreeSortV2() {
         node = null;
     }
-
 
     public void insert(T value){
         node = insertRecursive(node , value);
@@ -59,30 +38,6 @@ public class TreeSortImpl <T extends Comparable <? super T>> implements Sorter<T
         return node;
     }
 
-
-    /**
-     *      Polymorphism for Array sort
-     */
-    public int inOrder(Node node, T[] arr, int i){
-        if(node != null){
-            i = inOrder(node.left, arr, i);
-            arr[i++] = node.value;
-            i = inOrder(node.right, arr, i);
-        }
-
-        return i;
-    }
-
-    public void tree(T[] arr){
-        for(int i = 0; i < arr.length; i++){
-            insert(arr[i]);
-        }
-    }
-
-
-    /**
-     *      Polymorphism for List sort
-     */
     public int inOrder(Node node, List<T> list, int i){
         if(node != null){
             i = inOrder(node.left, list, i);
@@ -99,4 +54,15 @@ public class TreeSortImpl <T extends Comparable <? super T>> implements Sorter<T
         }
     }
 
+
+    private class Node{
+        public T value;
+        public Node left;
+        public Node right;
+
+        public Node(T value) {
+            this.value = value;
+            left = right = null;
+        }
+    }
 }

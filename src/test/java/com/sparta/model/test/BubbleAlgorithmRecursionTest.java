@@ -1,6 +1,6 @@
 package com.sparta.model.test;
 
-import com.sparta.model.ArrayIntegerGenerator;
+import com.sparta.model.generator.ArrayIntegerGenerator;
 import com.sparta.model.sorting.BubbleSortRecursionImpl;
 import com.sparta.model.sorting.Sorter;
 import org.junit.jupiter.api.BeforeAll;

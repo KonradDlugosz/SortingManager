@@ -1,4 +1,4 @@
-package com.sparta.model;
+package com.sparta.model.generator;
 
 import java.util.Random;
 

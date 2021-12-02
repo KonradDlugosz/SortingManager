@@ -13,7 +13,7 @@ public class DisplaySortingResults {
     public static RunSorting runSorting = new RunSorting();
     public static ListFactory listFactory = new ListFactory();
 
-    public static void displaySortingArrayResult(Sorter sorter, String method, int dataType){
+    public static void displaySortingResult(Sorter sorter, int dataType){
 
         if(dataType == 1){
             Integer [] arr = arrayIntegerGenerator.generateArray();
@@ -25,7 +25,7 @@ public class DisplaySortingResults {
 
     }
 
-    public static void displaySortingListResult(Sorter sorter, String method, int choice, int dataType){
+    public static void displaySortingResult(Sorter sorter, int choice, int dataType){
 
         if(dataType == 1){
             List<Integer> list = listFactory.listFactory(arrayIntegerGenerator.generateArray(), choice);
