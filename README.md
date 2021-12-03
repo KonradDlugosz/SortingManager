@@ -17,6 +17,8 @@
 5. [Sorting Algorithms](#Sorting-Algorithms)
 6. [Object Oriented Principles](#Object-Oriented-Principles ) 
 7. [Design Patterns](#Design-Patterns)
+7. [Testing](#Testing)
+7. [Logging](#Logging)
 8. [Extra Features](#Extra-Features)
 
 
@@ -199,6 +201,62 @@ public List listFactory(T [] arr, int selected) {
     }
     return list;
 }
+```
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Testing
+
+In order to make bug detection easier I have implemented JUnit testing. I have not covered 100% of the code, however I have covered most of the processing code which is most likely to rise bugs. 
+
+Here is an example of Junit testing for negative array length which should return empty array instead of error exception. 
+
+````Java
+@Test
+@DisplayName("3. Given negative length array, Return empty array")
+public void givenNegativeLengthArrayReturnEmptyArrayMethod2(){
+    ArrayIntegerGenerator arrayIntegerGenerator = new ArrayIntegerGenerator(-10, 1,1000, 50);
+    Integer [] actual = arrayIntegerGenerator.generateArray();
+    sorter.sortingAlgorithm(actual);
+    int [] expected = {};
+    
+    assertEquals(Arrays.toString(expected), Arrays.toString(actual));
+}
+````
+
+<p align="right">(<a href="#top">back to top</a>)</p>
+
+### Logging
+
+Logs are useful to detect common mistake that users make. This project uses log4j2 to record user activity which can provide accurate context about what user was doing when a specific error happened. 
+
+Example of logging file: 
+
+```
+[INFO] 2021-12-02 09:57:47,477 main Sorting Manager - User selected: Sorting menu
+[INFO] 2021-12-02 09:57:56,777 main Sorting Manager - Data structure choice: ArrayList
+[INFO] 2021-12-02 09:58:00,716 main Sorting Manager - Running bubble sort...
+[INFO] 2021-12-02 09:58:04,989 main Sorting Manager - Running bubble sort recursive...
+[INFO] 2021-12-02 09:58:07,357 main Sorting Manager - Running quick sort...
+[INFO] 2021-12-02 09:58:09,778 main Sorting Manager - Running tim sort...
+[INFO] 2021-12-02 09:58:11,362 main Sorting Manager - Running tree sort...
+[INFO] 2021-12-02 09:58:14,992 main Sorting Manager - Data structure choice: LinkedList
+[INFO] 2021-12-02 09:58:16,464 main Sorting Manager - Running bubble sort...
+[INFO] 2021-12-02 09:58:20,792 main Sorting Manager - Running bubble sort recursive...
+[INFO] 2021-12-02 09:58:23,435 main Sorting Manager - Running quick sort...
+[INFO] 2021-12-02 09:58:25,459 main Sorting Manager - Running tim sort...
+[INFO] 2021-12-02 09:58:27,086 main Sorting Manager - Running tree sort...
+[ERROR] 2021-12-02 09:58:30,443 main Sorting Manager - Wrong input for the menu! | Entered: 7657
+[INFO] 2021-12-02 09:58:37,643 main Sorting Manager - Data structure choice: ArrayList
+[INFO] 2021-12-02 09:58:38,775 main Sorting Manager - Running bubble sort...
+[INFO] 2021-12-02 09:59:01,942 main Sorting Manager - User updated random integer array params: Length: 10000 Start: 1 End: 100000 Seed: 40
+[INFO] 2021-12-02 09:59:09,191 main Sorting Manager - Display current integer array
+[INFO] 2021-12-02 09:59:32,282 main Sorting Manager - User updated random string array params: Length: 1000 Char per string: 10 Seed: 40
+[INFO] 2021-12-02 09:59:34,874 main Sorting Manager - Display current string array
+[INFO] 2021-12-02 09:59:46,406 main Sorting Manager - User selected: Sorting menu
+[INFO] 2021-12-02 09:59:51,274 main Sorting Manager - Data structure choice: ArrayList
+[INFO] 2021-12-02 09:59:52,057 main Sorting Manager - Running bubble sort...
+[INFO] 2021-12-02 09:59:57,079 main Sorting Manager - Exit application
 ```
 
 <p align="right">(<a href="#top">back to top</a>)</p>
