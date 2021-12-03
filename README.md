@@ -17,7 +17,7 @@
 5. [Sorting Algorithms](#Sorting-Algorithms)
 6. [Object Oriented Principles](#Object-Oriented-Principles ) 
 7. [Design Patterns](#Design-Patterns)
-8. Extra Features
+8. [Extra Features](#Extra-Features)
 
 
 
