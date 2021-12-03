@@ -193,6 +193,8 @@ public class UserInterface {
                                 dataType = 0;
                             } else if(isCorrect.equals("no")){
                                 updateMenu = 1;
+                            } else {
+                                System.out.println("Wrong input");
                             }
                             logger.info("User updated random integer array params: " + "Length: " + arrayIntegerGenerator.getLength() +
                                     " Start: " + arrayIntegerGenerator.getStart() + " End: " + arrayIntegerGenerator.getEnd() + " Seed: " + arrayIntegerGenerator.getSeed());
@@ -210,6 +212,8 @@ public class UserInterface {
                                 dataType = 0;
                             } else if(isCorrect.equals("no")){ // TODO Exception check for wrong input!
                                 updateMenu = 1;
+                            } else {
+                                System.out.println("Wrong input");
                             }
                             logger.info("User updated random string array params: " + "Length: " + arrayStringGenerator.getLength() +
                                     " Char per string: " + arrayStringGenerator.getSizePerString() + " Seed: " + arrayStringGenerator.getSeed());

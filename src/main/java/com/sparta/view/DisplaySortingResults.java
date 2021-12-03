@@ -22,7 +22,6 @@ public class DisplaySortingResults {
             String [] arr = arrayStringGenerator.generateArray();
             runSorting.runSorting(sorter, arr);
         }
-
     }
 
     public static void displaySortingResult(Sorter sorter, int choice, int dataType){
@@ -34,8 +33,6 @@ public class DisplaySortingResults {
             List<String> list = listFactory.listFactory(arrayStringGenerator.generateArray(), choice);//
             runSorting.runSorting(sorter, list);
         }
-
-
     }
 
 }
